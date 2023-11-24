@@ -27,7 +27,8 @@
         }
 
         &__content {
-            @include div-style(100%, fit-content);
+            @include div-style(95%, fit-content);
+            margin-left: 5%;
         }
     }
 }
