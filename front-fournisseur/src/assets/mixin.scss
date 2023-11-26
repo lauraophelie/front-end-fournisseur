@@ -1,0 +1,6 @@
+@mixin div-style($width, $height, $border: 1px solid transparent, $background-color: transparent) {
+    width: $width;
+    height: $height;
+    border: $border;
+    background-color: $background-color;
+}
