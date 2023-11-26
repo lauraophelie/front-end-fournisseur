@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Drafts, ExpandLess, ExpandMore, Folder, HorizontalRule, Inventory, ListAlt } from "@mui/icons-material";
 import { Collapse, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { useState } from "react";
 import "../assets/header.scss";
+import { Link } from "react-router-dom";
 
 function VerticalHeader(props) {
     const [open, setOpen] = useState(true);
@@ -16,6 +18,7 @@ function VerticalHeader(props) {
         <List
             component="nav"
             className="header__one--liste"
+            sx={{ fontSize: "15px" }}
         >
             <ListItemButton>
                 <ListItemIcon color={iconColor}>
@@ -28,19 +31,23 @@ function VerticalHeader(props) {
 
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <ListItemButton sx={{pl: 5}}>
-                        <ListItemIcon color={iconColor}>
-                            <HorizontalRule />
-                        </ListItemIcon>
-                        <ListItemText primary="Liste des articles"/>
-                    </ListItemButton>
+                    <Link to="/fournisseur/articles">
+                        <ListItemButton sx={{pl: 5}}>
+                            <ListItemIcon color={iconColor}>
+                                <HorizontalRule />
+                            </ListItemIcon>
+                            <ListItemText primary="Liste des articles"/>
+                        </ListItemButton>
+                    </Link>
 
-                    <ListItemButton sx={{pl: 5}}>
-                        <ListItemIcon color={iconColor}>
-                            <HorizontalRule />
-                        </ListItemIcon>
-                        <ListItemText primary="Ajouter un article"/>
-                    </ListItemButton>
+                    <Link to="/fournisseur/ajout_article">
+                        <ListItemButton sx={{pl: 5}}>
+                            <ListItemIcon color={iconColor}>
+                                <HorizontalRule />
+                            </ListItemIcon>
+                            <ListItemText primary="Ajouter un article"/>
+                        </ListItemButton>
+                    </Link>
                 </List>
             </Collapse>
 
