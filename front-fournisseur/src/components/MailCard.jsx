@@ -1,7 +1,17 @@
+/* eslint-disable react/prop-types */
 import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import Bouton from "./Bouton";
+import { useNavigate } from "react-router-dom";
 
-function MailCard() {
+function MailCard(props) {
+    const { mail } = props;
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/fournisseur/details_mail", { state : { id : mail.id }});
+    }
+
     return (
         <Card 
             sx={
@@ -18,26 +28,30 @@ function MailCard() {
         >
             <CardContent sx={{ width: 750 }}>
                 <Typography sx={{ fontSize: 17 }} variant="h2" pl={3} pt={2}>
-                    Nom entreprise
+                    {mail.entreprise}
                 </Typography>
                    
                 <Typography sx={{ fontSize: 15, fontWeight: "lighter", color: "grey"}} pl={3} pt={1}>
-                    Objet du mail
+                    {mail.objet}
                 </Typography>
             </CardContent>
 
             <CardContent>
                 <Typography sx={{ fontSize: 17 }} variant="h2" pl={3} pt={2}>
-                    Date
+                    {mail.date}
                 </Typography>
                    
                 <Typography sx={{ fontSize: 15, fontWeight: "lighter", color: "grey"}} pl={3} pt={1}>
-                    Heure
+                    {mail.heure}
                 </Typography>
             </CardContent>
 
             <CardActions sx={{marginLeft: 5}}>
-                <Bouton text="Détails" size="small"/>
+                <Bouton 
+                    text="Détails" 
+                    size="small"
+                    onClick={handleClick}
+                />
             </CardActions>
         </Card>
     )

@@ -5,6 +5,7 @@ import BoiteMail from './pages/BoiteMail'
 import ListeArticles from './pages/ListeArticles'
 import { Login } from '@mui/icons-material'
 import AjoutArticle from './pages/AjoutArticle'
+import DetailsMail from './pages/DetailsMail'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="fournisseur" element={<Header />}>
             <Route path="mail" element={<BoiteMail />} />
+            <Route path="details_mail" element={<DetailsMail />} />
             <Route path="articles" element={<ListeArticles />} />
             <Route path="ajout_article" element={<AjoutArticle />} />
           </Route>
