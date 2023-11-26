@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from "@mui/material";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from "@mui/material";
 import { useState } from "react";
 import ListePagination from "./ListePagination";
 
@@ -57,7 +57,7 @@ function Liste(props) {
                 {pagination && (
                     <TableFooter>
                         <TableRow>
-                            <ListePagination
+                            <TablePagination
                                 rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
                                 colSpan={3}
                                 count={rows.length}
@@ -71,7 +71,7 @@ function Liste(props) {
                                 }}
                                 onPageChange={handleChangePage}
                                 onRowsPerPageChange={handleChangeRowsPerPage}
-                                ActionsComponent={Pagination}
+                                ActionsComponent={ListePagination}
                             />
                         </TableRow>
                     </TableFooter>

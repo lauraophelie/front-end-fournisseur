@@ -36,10 +36,10 @@ function ListeArticles() {
     return (
         <div className="articles">
             <div className="articles__header">
-                <Titre text="Liste des articles" fontSize="24px" variant="h3" />
+                <Titre text="Liste des articles" fontSize="24px" variant="h3" textAlign="center" />
             </div>
             <div className="articles__liste">
-                <Liste rows={data} keys={header} pagination={true} width={"95%"} />
+                <Liste rows={data} keys={header} pagination={true} width={"95%"}/>
             </div>
         </div>
     )
