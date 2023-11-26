@@ -6,6 +6,7 @@ import ListeArticles from './pages/ListeArticles'
 import { Login } from '@mui/icons-material'
 import AjoutArticle from './pages/AjoutArticle'
 import DetailsMail from './pages/DetailsMail'
+import Stocks from './pages/Stocks'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="details_mail" element={<DetailsMail />} />
             <Route path="articles" element={<ListeArticles />} />
             <Route path="ajout_article" element={<AjoutArticle />} />
+            <Route path="stocks" element={<Stocks />} />
           </Route>
         </Routes>
       </BrowserRouter>
