@@ -22,7 +22,7 @@ function Liste(props) {
 
     return (
         <TableContainer component={Paper}>
-            <Table sx={{width: width, height: height}}>
+            <Table sx={{width: width, height: height, boxShadow: "none"}}>
                 <TableHead>
                     <TableRow>
                         {keys.map((key) => (

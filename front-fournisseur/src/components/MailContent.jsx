@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { CardContent, Typography } from "@mui/material";
 import "../assets/mail.scss";
+import { createData, getHeader } from "./Utilities";
+import Liste from "./Liste";
 
 function MailContent(props) {
     const { idMail } = props;
@@ -11,7 +13,7 @@ function MailContent(props) {
         objet: "Demande de proforma",
         date: "2023-11-30",
         heure: "15:00:00",
-        article: [
+        articles: [
             {
                 categorie: "Matériel informatique",
                 article: "Disque dur",
@@ -21,9 +23,18 @@ function MailContent(props) {
                 categorie: "Matériel informatique",
                 article: "Clé USB",
                 quantite: 50
+            },
+            {
+                categorie: "Matériel de bureau",
+                article: "Bloc-notes",
+                quantite: 50
             }
         ]
     };
+
+    const articles = mail.articles;
+    const data = createData(Object.keys(articles[0]));
+    const header = getHeader(data);
 
     return (
         <>
@@ -48,8 +59,9 @@ function MailContent(props) {
                     </Typography>
                 </CardContent>
             </div>
+            <hr />
             <div className="details-mail__content">
-                
+                <Liste rows={articles} keys={header} pagination={false} />
             </div>
         </>
     )
