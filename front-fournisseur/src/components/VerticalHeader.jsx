@@ -51,12 +51,14 @@ function VerticalHeader(props) {
                 </List>
             </Collapse>
 
-            <ListItemButton>
-                <ListItemIcon color={iconColor}>
-                    <Inventory />
-                </ListItemIcon> 
-                <ListItemText primary="Stocks" />
-            </ListItemButton>
+            <Link to="/fournisseur/stocks">
+                <ListItemButton>
+                    <ListItemIcon color={iconColor}>
+                        <Inventory />
+                    </ListItemIcon> 
+                    <ListItemText primary="Stocks" />
+                </ListItemButton>
+            </Link>
 
             <ListItemButton onClick={handleClick}>
                 <ListItemIcon color={iconColor}>
@@ -69,12 +71,14 @@ function VerticalHeader(props) {
 
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <ListItemButton sx={{pl: 5}}>
-                        <ListItemIcon>
-                            <HorizontalRule />
-                        </ListItemIcon>
-                        <ListItemText primary="Reçus"/>
-                    </ListItemButton>
+                    <Link to="/fournisseur/mail">
+                        <ListItemButton sx={{pl: 5}}>
+                            <ListItemIcon>
+                                <HorizontalRule />
+                            </ListItemIcon>
+                            <ListItemText primary="Reçus"/>
+                        </ListItemButton>
+                    </Link>
 
                     <ListItemButton sx={{pl: 5}}>
                         <ListItemIcon>

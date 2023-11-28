@@ -16,8 +16,8 @@
     }
 
     &__form {
-        margin-top: 35px;
         @include div-style(50%, 300px);
+        margin-top: 35px;
         margin-left: 25%;
 
         &--input {
@@ -42,5 +42,15 @@
             width: 100%;
             height: 45px;
         }
+    }
+}
+
+.stocks {
+    &__header {
+        margin-top: 50px;
+    }
+
+    &__liste {
+        margin-top: 45px;
     }
 }
