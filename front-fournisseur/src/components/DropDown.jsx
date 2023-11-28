@@ -4,6 +4,8 @@ import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 function DropDown(props) {
     const { data, label, value, onChange, required, className, width } = props;
 
+    console.log(data);
+
     return (
         <Box className={className} sx={{ width: width }}>
             <FormControl required={required} fullWidth>
@@ -12,9 +14,9 @@ function DropDown(props) {
                     value={value}
                     onChange={onChange}
                 >
-                    {data.map((item) => (
+                    {data && data.map((item) => (
                         <MenuItem key={item.id} value={item.id}>
-                            {item.title}
+                            {item.nom}
                         </MenuItem>
                     ))}
                 </Select>

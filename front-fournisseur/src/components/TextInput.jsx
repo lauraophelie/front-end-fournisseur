@@ -2,7 +2,7 @@
 import { TextField } from "@mui/material";
 
 function TextInput(props) {
-    const { label, required, value, type, className, width } = props;
+    const { label, required, value, type, className, width, onChange } = props;
 
     return (
         <TextField 
@@ -12,6 +12,7 @@ function TextInput(props) {
             required={required}
             className={className}
             sx={{ width: width }}
+            onChange={onChange}
         />
     )
 }
